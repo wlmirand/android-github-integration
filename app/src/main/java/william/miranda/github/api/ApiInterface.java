@@ -1,13 +1,20 @@
 package william.miranda.github.api;
 
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
+import william.miranda.github.model.Repository;
+import william.miranda.github.model.User;
 
 /**
  * Interface do Retrofit contendo os endpoints da Api
  */
 public interface ApiInterface {
     @GET("search/repositories")
-    Call<RepositoryResponse> getRepositories(@Query("q") String query);
+    Call<ApiResponse<Repository>> getRepositories(@QueryMap Map<String, String> queryMap);
+
+    @GET("search/users")
+    Call<ApiResponse<User>> getUsers(@QueryMap Map<String, String> queryMap);
 }
