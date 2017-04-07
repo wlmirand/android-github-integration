@@ -190,6 +190,9 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.Re
                 case "go":
                     defaultRes = R.drawable.ic_go_sq;
                     break;
+                case "php":
+                    defaultRes = R.drawable.ic_php_sq;
+                    break;
                 case "assembly":
                     defaultRes = R.drawable.ic_asm_sq;
                     break;
@@ -201,6 +204,9 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.Re
                     break;
                 case "groovy":
                     defaultRes = R.drawable.ic_groovy_sq;
+                    break;
+                case "ruby":
+                    defaultRes = R.drawable.ic_ruby_sq;
                     break;
                 case "coffeescript":
                     defaultRes = R.drawable.ic_coffeescript_sq;

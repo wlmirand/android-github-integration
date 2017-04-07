@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class GithubApi
 {
-    public static final String API_BASE_URL = "https://api.github.com";
+    private static final String API_BASE_URL = "https://api.github.com";
 
     private Retrofit retrofit;
     private ApiInterface apiInterface;

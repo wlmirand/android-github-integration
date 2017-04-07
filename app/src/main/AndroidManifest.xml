@@ -17,8 +17,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.fragments.GenericPagerFragment" />
-
     </application>
 
 </manifest>

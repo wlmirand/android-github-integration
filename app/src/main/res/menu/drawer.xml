@@ -6,12 +6,12 @@
         <item
             android:id="@+id/menu_repositories"
             android:checked="false"
-            android:title="Repositórios" />
+            android:title="@string/repositories" />
 
         <item
             android:id="@+id/menu_users"
             android:checked="false"
-            android:title="Usuários" />
+            android:title="@string/users" />
 
     </group>
 </menu>

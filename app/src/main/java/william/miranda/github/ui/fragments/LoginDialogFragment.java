@@ -30,14 +30,12 @@ public class LoginDialogFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog loginDialog = new AlertDialog.Builder(getContext())
+        return new AlertDialog.Builder(getContext())
                 .setTitle("Login Github")
                 .setPositiveButton("Ok", listener)
                 .setNegativeButton("Cancelar", null)
                 .setView(R.layout.fragment_login)
                 .create();
-
-        return loginDialog;
     }
 
     private void setListener(DialogInterface.OnClickListener listener) {

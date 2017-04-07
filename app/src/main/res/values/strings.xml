@@ -3,7 +3,6 @@
     <string name="api_error">Erro na chamada da Api</string>
     <string name="return_error">Limite de chamadas excedido</string>
     <string name="search_hint">Tente buscar algo</string>
-    <string name="no_results_hint">Sua busca não obteve resultados</string>
     <string name="login">Login</string>
     <string name="password">Senha</string>
     <string name="search">Buscar</string>
@@ -11,4 +10,6 @@
     <string name="close_drawer">Fechar Drawer</string>
     <string name="login_text">Clique para fazer\nLogin no Github</string>
     <string name="welcome">Bem vindo ao Github\nClique no menu para iniciar</string>
+    <string name="repositories">Repositórios</string>
+    <string name="users">Usuários</string>
 </resources>
