@@ -18,7 +18,6 @@
         </activity>
 
         <activity android:name=".ui.fragments.GenericPagerFragment" />
-        <activity android:name=".ui.activities.RepositoryDetailActivity" />
 
     </application>
 

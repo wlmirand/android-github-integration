@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"/>
+        android:text="@string/login"/>
 
     <EditText
         android:id="@+id/login_username"
@@ -21,11 +21,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Senha"/>
+        android:text="@string/password"/>
 
     <EditText
         android:id="@+id/login_password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
 
 </LinearLayout>

@@ -5,6 +5,7 @@
     <string name="search_hint">Tente buscar algo</string>
     <string name="no_results_hint">Sua busca não obteve resultados</string>
     <string name="login">Login</string>
+    <string name="password">Senha</string>
     <string name="search">Buscar</string>
     <string name="open_drawer">Abrir Drawer</string>
     <string name="close_drawer">Fechar Drawer</string>

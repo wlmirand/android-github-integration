@@ -13,7 +13,6 @@ import william.miranda.github.api.ApiResponse;
 import william.miranda.github.api.GithubApi;
 import william.miranda.github.model.Repository;
 import william.miranda.github.model.User;
-import william.miranda.github.ui.activities.RepositoryDetailActivity;
 
 public class Controller {
 
@@ -72,23 +71,14 @@ public class Controller {
     }
 
     /**
-     * Mostra os detalhes de um dado Repositório
+     * Abre a página do Github do repositório
+     * Poderiamos também abrir uma Activity de Detalhes, onde deveriamos passar as informaçoes
+     * através de um Intent (ou devemos persistir e passar um ID caso sejam muitos dados).
      * @param repository
      */
     public void displayRepositoryDetails(Context context, Repository repository) {
-        /* Como iremos mostrar poucos dados, passaremos todos eles em um Bundle.
-            Poderiamos também fazer nosso POJO implementar a interface Parcelable e passar o objeto inteiro,
-            porém como podemos ter muitos dados, levaria a um TooLargeTransactionException por causa
-            das restrições do Binder (1MB de dados no máximo).
-            Se fosse necessário passar um volume grande de dados, deveriamos salvar os Dados em um
-            DB ou arquivo e passar apenas a referência para o Fragment, que ficaria responsável por
-            obter o conjunto completo dos dados.
-            Também poderíamos passar apenas o ID e fazer uma nova busca na Api
-         */
-        Intent intent = new Intent(context, RepositoryDetailActivity.class);
-        intent.putExtra("name", repository.getName());
-        intent.putExtra("owner", repository.getOwner().getLogin());
-        intent.putExtra("description", repository.getDescription());
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(repository.getHtmlUrl()));
         context.startActivity(intent);
     }
 
