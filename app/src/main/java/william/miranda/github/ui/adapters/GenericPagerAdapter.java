@@ -43,7 +43,7 @@ public class GenericPagerAdapter extends FragmentStatePagerAdapter {
         arguments.putString("query", query);
         arguments.putInt("pageNumber", position + 1);//começa na página 1 (e não na 0)
 
-        Fragment fragment = null;
+        Fragment fragment;
 
         if (pageType == GenericPagerFragment.PageType.REPOSITORIES) {
             fragment = new RepositoryFragment();

@@ -25,8 +25,9 @@ import william.miranda.github.api.Auth;
 import william.miranda.github.controller.Controller;
 import william.miranda.github.model.User;
 import william.miranda.github.tasks.DownloadImageTask;
-import william.miranda.github.ui.fragments.LoginDialogFragment;
 import william.miranda.github.ui.fragments.GenericPagerFragment;
+import william.miranda.github.ui.fragments.LoginDialogFragment;
+import william.miranda.github.ui.fragments.WelcomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -90,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //infla o fragmento de boas vindas
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frame, new WelcomeFragment())
+                .commit();
 
         //Define o Toolbar (usamos o da support lib)
         toolbar = (Toolbar) findViewById(R.id.toolbar);

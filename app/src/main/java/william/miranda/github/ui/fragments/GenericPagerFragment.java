@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import william.miranda.github.R;
 import william.miranda.github.ui.adapters.GenericPagerAdapter;
@@ -33,6 +34,9 @@ public class GenericPagerFragment extends Fragment {
         USERS
     }
 
+    /**
+     * Tipo do Fragment
+     */
     private PageType pageType;
 
     /**
@@ -40,6 +44,7 @@ public class GenericPagerFragment extends Fragment {
      */
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private TextView searchHint;
 
     /**
      * PagerAdapter
@@ -88,6 +93,7 @@ public class GenericPagerFragment extends Fragment {
 
         viewPager = (ViewPager) view.findViewById(R.id.view_pager);
         tabLayout = (TabLayout) view.findViewById(R.id.page_dots);
+        searchHint = (TextView) view.findViewById(R.id.search_hint);
         return view;
     }
 
@@ -114,6 +120,7 @@ public class GenericPagerFragment extends Fragment {
                 pagerAdapter = new GenericPagerAdapter(pageType, query, getFragmentManager());
                 viewPager.setAdapter(pagerAdapter);
                 tabLayout.setupWithViewPager(viewPager);
+                searchHint.setVisibility(View.GONE);
                 return true;
             }
 

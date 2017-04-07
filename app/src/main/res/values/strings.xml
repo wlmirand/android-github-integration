@@ -9,4 +9,5 @@
     <string name="open_drawer">Abrir Drawer</string>
     <string name="close_drawer">Fechar Drawer</string>
     <string name="login_text">Clique para fazer\nLogin no Github</string>
+    <string name="welcome">Bem vindo ao Github\nClique no menu para iniciar</string>
 </resources>

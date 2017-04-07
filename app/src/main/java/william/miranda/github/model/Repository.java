@@ -2,8 +2,6 @@ package william.miranda.github.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import william.miranda.github.R;
-
 /**
  * POJO para os Repositórios que vem no Response da Api
  * Inicialmente adicionamos somente os campos que precisamos

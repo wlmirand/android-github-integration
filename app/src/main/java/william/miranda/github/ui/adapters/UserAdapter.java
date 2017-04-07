@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -11,8 +12,8 @@ import java.util.Collection;
 import java.util.List;
 
 import william.miranda.github.R;
-import william.miranda.github.model.Repository;
 import william.miranda.github.model.User;
+import william.miranda.github.tasks.DownloadImageTask;
 
 /**
  * Adapter responsável por mostrar uma lista de Usuários
@@ -91,6 +92,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
          * Campos do Layout
          */
         private final TextView userName;
+        private final ImageView userAvatar;
 
         /**
          * Construtor
@@ -100,6 +102,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         public UserViewHolder(View itemView) {
             super(itemView);
             userName = (TextView) itemView.findViewById(R.id.user_name);
+            userAvatar = (ImageView) itemView.findViewById(R.id.user_avatar);
         }
 
         /**
@@ -108,6 +111,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
          */
         public void setData(User user) {
             userName.setText(user.getLogin());
+            new DownloadImageTask(userAvatar).execute(user.getAvatarUrl());
         }
 
         /**

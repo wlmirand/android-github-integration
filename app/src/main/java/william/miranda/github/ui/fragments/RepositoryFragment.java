@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -30,6 +31,7 @@ public class RepositoryFragment extends Fragment {
      * Itens do Layout
      */
     private RecyclerView recyclerView;
+    private ProgressBar progressBar;
 
     /**
      * Número da página atual
@@ -50,6 +52,8 @@ public class RepositoryFragment extends Fragment {
             //Se chegou algum response, analisamos...
             switch (response.code()) {
                 case 200://Tudo OK
+                    progressBar.setVisibility(View.GONE);
+
                     int totalCount = Math.min(response.body().getTotalCount(), 1000);
                     int numPerPage = response.body().getItems().size();
                     int numPages = (int) Math.ceil(totalCount / (float) numPerPage);
@@ -113,6 +117,8 @@ public class RepositoryFragment extends Fragment {
         recyclerView.setAdapter(new RepositoryAdapter(clickListener));
 
         viewPager = (ViewPager) container;
+
+        progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
 
         return view;
     }

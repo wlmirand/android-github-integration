@@ -4,8 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import william.miranda.github.model.User;
-
 /**
  * Objeto de Response para a Api
  * Pela documentação, a busca por Repositórios e Usuários retorna os mesmos campos no JSON

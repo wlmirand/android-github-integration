@@ -6,9 +6,10 @@ import android.os.AsyncTask;
 import android.widget.ImageView;
 
 import java.io.InputStream;
+import java.net.URL;
 
 /**
- * Task para baixar imagens através de uma URL
+ * Task para baixar imagens através de uma URL e atualizar um ImageView
  */
 public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
 
@@ -19,11 +20,11 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     }
 
     protected Bitmap doInBackground(String... urls) {
-        String urldisplay = urls[0];
+        String url = urls[0];
 
         Bitmap bitmap = null;
         try {
-            InputStream in = new java.net.URL(urldisplay).openStream();
+            InputStream in = new URL(url).openStream();
             bitmap = BitmapFactory.decodeStream(in);
         } catch (Exception e) {
             e.printStackTrace();

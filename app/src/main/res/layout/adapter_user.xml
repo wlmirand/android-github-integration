@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
     android:background="?android:selectableItemBackground">
 
+    <ImageView
+        android:id="@+id/user_avatar"
+        android:layout_width="@dimen/avatar_list_size"
+        android:layout_height="@dimen/avatar_list_size"
+        android:layout_centerVertical="true"/>
+
     <TextView
         android:id="@+id/user_name"
-        android:textStyle="bold"
-        android:textSize="24sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/user_avatar"
+        android:layout_marginLeft="16dp"/>
 
-</LinearLayout>
+</RelativeLayout>

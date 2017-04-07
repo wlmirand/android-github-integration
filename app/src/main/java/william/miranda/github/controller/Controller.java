@@ -1,8 +1,8 @@
 package william.miranda.github.controller;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -93,22 +93,12 @@ public class Controller {
     }
 
     /**
-     * Mostra os detalhes de um dado Usuário
+     * Abre a página do Github do usuário
      * @param user
      */
     public void displayUserDetails(Context context, User user) {
-        /* Como iremos mostrar poucos dados, passaremos todos eles em um Bundle.
-            Poderiamos também fazer nosso POJO implementar a interface Parcelable e passar o objeto inteiro,
-            porém como podemos ter muitos dados, levaria a um TooLargeTransactionException por causa
-            das restrições do Binder (1MB de dados no máximo).
-            Se fosse necessário passar um volume grande de dados, deveriamos salvar os Dados em um
-            DB ou arquivo e passar apenas a referência para o Fragment, que ficaria responsável por
-            obter o conjunto completo dos dados.
-            Também poderíamos passar apenas o ID e fazer uma nova busca na Api
-         */
-//        Intent intent = new Intent(context, UserDetailActivity.class);
-//        intent.putExtra("name", user.getLogin());
-//        intent.putExtra("avatarUrl", user.getAvatarUrl());
-//        context.startActivity(intent);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(user.getHtmlUrl()));
+        context.startActivity(intent);
     }
 }
