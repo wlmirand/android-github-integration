@@ -3,10 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="190dp"
     android:background="@drawable/header"
-    android:paddingTop="26dp"
     android:paddingLeft="10dp"
-    android:paddingBottom="10dp"
-    android:orientation="vertical">
+    android:paddingBottom="10dp">
 
     <TextView
         android:layout_width="wrap_content"
