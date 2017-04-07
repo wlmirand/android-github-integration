@@ -1,5 +1,6 @@
 package william.miranda.github.api;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -10,6 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class GithubApi
 {
+    public static final String API_BASE_URL = "https://api.github.com";
+
     private Retrofit retrofit;
     private ApiInterface apiInterface;
 
@@ -21,9 +24,13 @@ public class GithubApi
      */
     private GithubApi()
     {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new SessionInterceptor()).build();
+
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.github.com")
+                .baseUrl(API_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
                 .build();
 
         apiInterface = retrofit.create(ApiInterface.class);

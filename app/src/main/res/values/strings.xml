@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Github Integration</string>
     <string name="api_error">Erro na chamada da Api</string>
+    <string name="return_error">Limite de chamadas excedido</string>
     <string name="search_hint">Tente buscar algo</string>
     <string name="no_results_hint">Sua busca não obteve resultados</string>
+    <string name="login">Login</string>
+    <string name="search">Buscar</string>
+    <string name="open_drawer">Abrir Drawer</string>
+    <string name="close_drawer">Fechar Drawer</string>
+    <string name="login_text">Clique para fazer\nLogin no Github</string>
 </resources>
